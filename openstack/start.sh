@@ -113,7 +113,7 @@ cat << EOF > provision.sh
 mkdir -p /etc/puppet/modules
 git clone ${PUPPET_CLOUD_VM_REPO_URL} /etc/puppet/modules/puppet-cloud-vm
 wget --no-check-certificate https://raw.githubusercontent.com/cnaf/config-scripts/master/configure-deployment-node.sh -O /root/configure-deployment-node.sh
-MODULES_URL=${MODULES_URL} sh /root/configure-deployment-node.sh
+sh /root/configure-deployment-node.sh
 EOF
 
 scp ${SSH_OPTIONS} provision.sh ${EC2_USER}@${MACHINE_HOSTNAME}:
