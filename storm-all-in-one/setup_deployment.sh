@@ -7,7 +7,7 @@ terminate() {
       echo $1 && kill -s TERM $TOP_PID
 }
 
-[ -n "${JENKINS_SLAVE_PRIVATE_KEY}"] || terminate "JENKINS_SLAVE_PRIVATE_KEY not set."
+[ -n "${JENKINS_SLAVE_PRIVATE_KEY}" ] || terminate "JENKINS_SLAVE_PRIVATE_KEY not set."
 [ -n "${REPO_URL}" ] || terminate "REPO_URL not set."
 [ -n "${PLATFORM}" ] || terminate "PLATFORM not set."
 [ -n "${MODE}" ] || terminate "MODE not set."
