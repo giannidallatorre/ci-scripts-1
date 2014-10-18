@@ -11,6 +11,8 @@ terminate() {
 [ -n "${REPO_URL}" ] || terminate "REPO_URL not set."
 [ -n "${PLATFORM}" ] || terminate "PLATFORM not set."
 [ -n "${MODE}" ] || terminate "MODE not set."
+[ -n "${MACHINE_HOSTNAME}" ] || terminate "MACHINE_HOSTNAME not set."
+[ -n "${EC2_USER}" ] || terminate "EC2_USER not set."
 
 STORM_DEPLOYMENT_TEST_REPO=${STORM_DEPLOYMENT_TEST_REPO:-https://github.com/italiangrid/storm-deployment-test.git}
 STORM_DEPLOYMENT_TEST_BRANCH=${STORM_DEPLOYMENT_TEST_BRANCH:-master}
