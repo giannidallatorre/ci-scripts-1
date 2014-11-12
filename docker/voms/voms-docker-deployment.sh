@@ -25,7 +25,7 @@ INCLUDE_TESTS=${INCLUDE_TESTS:-""}
 EXCLUDE_TESTS=${EXCLUDE_TESTS:-""}
 
 # Start myproxy server
-if [ -z "${SKIP_MYPROXY" ]; then
+if [ -z "${SKIP_MYPROXY}" ]; then
   docker run -d \
     -h myproxy-server \
     --name myproxy-server \
