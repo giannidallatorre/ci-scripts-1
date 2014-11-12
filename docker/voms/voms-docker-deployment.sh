@@ -54,6 +54,7 @@ docker run \
   --name voms-ts \
   --volumes-from voms-server \
   --link voms-server:voms-server \
+  --link myproxy-server:myproxy-server \
   italiangrid:voms-ts
 
 testsuite_retval=$?
