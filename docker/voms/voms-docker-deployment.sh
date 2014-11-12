@@ -24,6 +24,14 @@ MYPROXY_PASSWORD=${MYPROXY_PASSWORD:-123456}
 INCLUDE_TESTS=${INCLUDE_TESTS:-""}
 EXCLUDE_TESTS=${EXCLUDE_TESTS:-""}
 
+# Start myproxy server
+if [ -z "${SKIP_MYPROXY" ]; then
+  docker run -d \
+    -h myproxy-server \
+    --name myproxy-server \
+    italiangrid:myproxy-server
+fi
+
 # run VOMS deployment
 if [ -z "${SKIP_SERVER}" ]; then
   docker run -d \
@@ -73,5 +81,6 @@ fi
 docker cp voms-ts:/home/voms/voms-testsuite/reports .
 docker logs --tail="all" voms-ts &> testsuite.log
 docker rm -f voms-ts
+docker rm -f myproxy-server
 
 exit ${testsuite_retval}
