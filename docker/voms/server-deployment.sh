@@ -24,6 +24,10 @@ MYPROXY_PASSWORD=${MYPROXY_PASSWORD:-123456}
 INCLUDE_TESTS=${INCLUDE_TESTS:-""}
 EXCLUDE_TESTS=${EXCLUDE_TESTS:-""}
 
+# Reporitory of deployment test script
+DTS_BRANCH=${DTS_BRANCH:-master}
+DTS_REPO=${DTS_REPO:-git://github.com/italiangrid/voms-deployment-test}
+
 # Start myproxy server
 if [ -z "${SKIP_MYPROXY}" ]; then
   docker run -d \
